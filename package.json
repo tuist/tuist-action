@@ -4,17 +4,26 @@
   "description": "A GitHub action to run Tuist in GitHub workflows",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tuist/tuist-action.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "tuist",
+    "github actions"
+  ],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/tuist/tuist-action/issues"
   },
-  "homepage": "https://github.com/tuist/tuist-action#readme"
+  "homepage": "https://tuist.io",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  }
 }
