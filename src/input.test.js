@@ -18,13 +18,13 @@ describe("input", () => {
     });
   });
 
-  describe("arguments", () => {
+  describe("args", () => {
     it("returns the right value", () => {
       // Given
       core.getInput.mockReturnValue("--open");
 
       // Then
-      const got = input.arguments();
+      const got = input.args();
 
       // Then
       expect(got).toEqual("--open");
