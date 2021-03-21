@@ -1,5 +1,7 @@
 # Tuist Action
 
+[![Tuist Action](https://github.com/tuist/tuist-action/actions/workflows/tuist-action.yml/badge.svg)](https://github.com/tuist/tuist-action/actions/workflows/tuist-action.yml)
+
 This repository contains a [GitHub Action](https://github.com/features/actions) to run Tuist on CI>
 
 ## Example usage
