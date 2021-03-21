@@ -4,6 +4,9 @@
     },
     "search.exclude": {
         "**/node_modules/**": true
+    },
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#6236FF"
     }
 
 }
