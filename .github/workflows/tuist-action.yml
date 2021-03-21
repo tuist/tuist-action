@@ -29,4 +29,4 @@ jobs:
       - name: Install dependencies
         run: yarn install --prod --pure-lockfile
       - name: Run tests
-        run: ./fourier build next
+        run: yarn test
