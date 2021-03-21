@@ -1,12 +1,12 @@
-name: 'Tuist'
-description: 'Run Tuist in continuous integration'
-inputs:
-  command:
-    description: 'The command you'd like to run'
-    required: true
-  arguments:
-    description: 'The arguments to pass to the command'
+name: Tuist
+description: "Run Tuist in continuous integration"
+inputs: 
+  arguments: 
+    description: "The arguments to pass to the command"
     required: false
-runs:
-  using: 'node12'
-  main: 'index.js'
+  command: 
+    description: "The command you'd like to run"
+    required: true
+runs: 
+  main: index.js
+  using: node12
