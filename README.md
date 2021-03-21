@@ -8,7 +8,7 @@ This repository contains a [GitHub Action](https://github.com/features/actions) 
 uses: tuist/tuist-action@0.1.0
 with:
   command: "build"
-  args: "MyTarget"
+  arguments: "MyTarget"
 ```
 ## References
 

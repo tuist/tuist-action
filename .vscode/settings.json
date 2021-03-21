@@ -1,12 +1,23 @@
 {
-    "files.exclude": {
-        "**/node_modules/**": true
-    },
-    "search.exclude": {
-        "**/node_modules/**": true
-    },
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#6236FF"
-    }
-
+  "files.exclude": {
+    "**/node_modules/**": true
+  },
+  "search.exclude": {
+    "**/node_modules/**": true
+  },
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#6236FF"
+  },
+  "[yml]": {
+    "editor.formatOnSave": false
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/.DS_Store": true
+  }
 }

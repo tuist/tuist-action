@@ -1,13 +1,12 @@
 name: 'Tuist'
 description: 'Run Tuist in continuous integration'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  command:
+    description: 'The command you'd like to run'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  arguments:
+    description: 'The arguments to pass to the command'
+    required: false
 runs:
   using: 'node12'
   main: 'index.js'

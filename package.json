@@ -4,7 +4,7 @@
   "description": "A GitHub action to run Tuist in GitHub workflows",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "jest"
   },
   "repository": {
     "type": "git",
