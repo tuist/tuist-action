@@ -1,6 +1,6 @@
 const core = require("@actions/core");
 const input = require("./input");
-const child_process = require("child_process");
+const execSync = require("./execSync");
 const isTuistInstalled = require("./isTuistInstalled");
 const installTuist = require("./installTuist");
 
@@ -20,7 +20,7 @@ module.exports = () => {
       execCommand = `${execCommand} ${args}`;
     }
 
-    child_process.execSync(execCommand);
+    execSync(execCommand);
   } catch (error) {
     core.setFailed(error.message);
   }

@@ -1,13 +1,13 @@
 const core = require("@actions/core");
 const input = require("./input");
-const child_process = require("child_process");
+const execSync = require("./execSync");
 const isTuistInstalled = require("./isTuistInstalled");
 const installTuist = require("./installTuist");
 const run = require("./run");
 
 jest.mock("./isTuistInstalled");
 jest.mock("./installTuist");
-jest.mock("child_process");
+jest.mock("./execSync");
 jest.mock("./input");
 jest.mock("@actions/core");
 
@@ -33,7 +33,7 @@ describe("run", () => {
     run();
 
     // Then
-    expect(child_process.execSync).toHaveBeenCalledWith("tuist generate");
+    expect(execSync).toHaveBeenCalledWith("/usr/local/bin/tuist generate");
   });
 
   it("runs the command", () => {
@@ -46,8 +46,8 @@ describe("run", () => {
     run();
 
     // Then
-    expect(child_process.execSync).toHaveBeenCalledWith(
-      "tuist generate --open"
+    expect(execSync).toHaveBeenCalledWith(
+      "/usr/local/bin/tuist generate --open"
     );
   });
 
@@ -56,7 +56,7 @@ describe("run", () => {
     input.command.mockReturnValue("generate");
     input.args.mockReturnValue("--open");
     isTuistInstalled.mockReturnValue(true);
-    child_process.execSync.mockImplementation(() => {
+    execSync.mockImplementation(() => {
       throw new Error("execution failed");
     });
 
@@ -64,8 +64,8 @@ describe("run", () => {
     run();
 
     // Then
-    expect(child_process.execSync).toHaveBeenCalledWith(
-      "tuist generate --open"
+    expect(execSync).toHaveBeenCalledWith(
+      "/usr/local/bin/tuist generate --open"
     );
     expect(core.setFailed).toHaveBeenCalledWith("execution failed");
   });

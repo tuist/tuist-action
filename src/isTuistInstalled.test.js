@@ -1,7 +1,7 @@
 const isTuistInstalled = require("./isTuistInstalled");
-const child_process = require("child_process");
+const execSync = require("./execSync");
 
-jest.mock("child_process");
+jest.mock("./execSync");
 
 describe("isTuistInstalled", () => {
   it("returns true when which says Tuist exists", () => {
@@ -10,12 +10,12 @@ describe("isTuistInstalled", () => {
 
     // Then
     expect(got).toBeTruthy();
-    expect(child_process.execSync).toHaveBeenCalledWith("which tuist");
+    expect(execSync).toHaveBeenCalledWith("which tuist");
   });
 
   it("returns true when which errors", () => {
     // Given
-    child_process.execSync.mockImplementation(() => {
+    execSync.mockImplementation(() => {
       throw new Error("tuist not found");
     });
 
@@ -24,6 +24,6 @@ describe("isTuistInstalled", () => {
 
     // Then
     expect(got).toBeFalsy();
-    expect(child_process.execSync).toHaveBeenCalledWith("which tuist");
+    expect(execSync).toHaveBeenCalledWith("which tuist");
   });
 });

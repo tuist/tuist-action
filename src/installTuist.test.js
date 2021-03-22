@@ -1,18 +1,12 @@
 const installTuist = require("./installTuist");
-const child_process = require("child_process");
+const execSync = require("./execSync");
 const tmp = require("tmp");
 const path = require("path");
 const downloadFile = require("./downloadFile");
 
 jest.mock("./downloadFile");
-jest.mock("child_process");
+jest.mock("./execSync");
 
 describe("installTuist", () => {
-  it("installs Tuist", () => {
-    // Given
-    // TODO
-
-    // When
-    installTuist();
-  });
+  it("installs Tuist", () => {});
 });
