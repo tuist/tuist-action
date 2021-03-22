@@ -15,7 +15,7 @@ module.exports = () => {
     }
 
     // Run the command
-    let execCommand = `tuist ${command}`;
+    let execCommand = `/usr/local/bin/tuist ${command}`;
     if (args) {
       execCommand = `${execCommand} ${args}`;
     }
