@@ -9,5 +9,4 @@ module.exports = () => {
   downloadFile("https://install.tuist.io", installScriptPath);
   child_process.execSync(`chmod +x ${installScriptPath}`);
   child_process.execSync(installScriptPath);
-  tmpobj.removeCallback();
 };
