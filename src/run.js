@@ -2,6 +2,7 @@ const core = require("@actions/core");
 const input = require("./input");
 const child_process = require("child_process");
 const isTuistInstalled = require("./isTuistInstalled");
+const installTuist = require("./installTuist");
 
 module.exports = () => {
   try {
@@ -10,7 +11,7 @@ module.exports = () => {
 
     // Install Tuist if it doesn't exist in the system
     if (!isTuistInstalled()) {
-      child_process.execSync(`bash <(curl -Ls https://install.tuist.io)`);
+      installTuist();
     }
 
     // Run the command

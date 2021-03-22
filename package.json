@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "@actions/core": "^1.2.6",
-    "@actions/github": "^4.0.0"
+    "@actions/github": "^4.0.0",
+    "tmp": "^0.2.1"
   },
   "jest": {
     "resetMocks": true

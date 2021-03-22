@@ -2,9 +2,11 @@ const core = require("@actions/core");
 const input = require("./input");
 const child_process = require("child_process");
 const isTuistInstalled = require("./isTuistInstalled");
+const installTuist = require("./installTuist");
 const run = require("./run");
 
 jest.mock("./isTuistInstalled");
+jest.mock("./installTuist");
 jest.mock("child_process");
 jest.mock("./input");
 jest.mock("@actions/core");
@@ -20,9 +22,7 @@ describe("run", () => {
     run();
 
     // Then
-    expect(child_process.execSync).toHaveBeenCalledWith(
-      "bash <(curl -Ls https://install.tuist.io)"
-    );
+    expect(installTuist).toHaveBeenCalled();
   });
   it("doesn't include args if they are not passed", () => {
     // Given
