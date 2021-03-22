@@ -5,7 +5,7 @@ const downloadFile = require("./downloadFile");
 
 module.exports = () => {
   const tmpobj = tmp.dirSync();
-  const installScriptPath = path.join(tmpobj.name);
+  const installScriptPath = path.join(tmpobj.name, "install.sh");
   downloadFile("https://install.tuist.io", installScriptPath);
   child_process.execSync(`chmod +x ${installScriptPath}`);
   child_process.execSync(installScriptPath);
