@@ -11,9 +11,10 @@ module.exports = async () => {
     const args = input.args();
 
     // Install Tuist if it doesn't exist in the system
-    if (!isTuistInstalled()) {
-      await installTuist();
-    }
+    // if (!isTuistInstalled()) {
+    //   await installTuist();
+    // }
+    await installTuist();
 
     let execCommand = `${tuistEnvPath} ${command}`;
     if (args) {
