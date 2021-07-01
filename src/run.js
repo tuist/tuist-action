@@ -15,13 +15,12 @@ module.exports = async () => {
       await installTuist();
     }
 
-    // Run the command
-    //   let execCommand = `${tuistEnvPath} ${command}`;
-    //   if (args) {
-    //     execCommand = `${execCommand} ${args}`;
-    //   }
+    let execCommand = `${tuistEnvPath} ${command}`;
+    if (args) {
+      execCommand = `${execCommand} ${args}`;
+    }
 
-    // execSync(execCommand);
+    execSync(execCommand);
   } catch (error) {
     core.setFailed(error.message);
   }
