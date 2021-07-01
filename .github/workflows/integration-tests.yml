@@ -1,0 +1,19 @@
+name: Regression Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: "/"
+        name: Build
+        with:
+          command: "build"
+          arguments: "--path fixture"
