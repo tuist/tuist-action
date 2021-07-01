@@ -10,6 +10,6 @@ module.exports = async function () {
     },
   });
   return response.data["assets"].find((asset) => {
-    asset["name"] === "tuistenv.zip";
+    return asset["name"] === "tuistenv.zip";
   })["browser_download_url"];
 };
