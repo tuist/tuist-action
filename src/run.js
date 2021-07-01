@@ -3,6 +3,7 @@ const input = require("./input");
 const execSync = require("./execSync");
 const isTuistInstalled = require("./isTuistInstalled");
 const installTuist = require("./installTuist");
+const { tuistEnvPath } = require("./tuistEnvPath");
 
 module.exports = () => {
   try {
@@ -15,7 +16,7 @@ module.exports = () => {
     }
 
     // Run the command
-    let execCommand = `/usr/local/bin/tuist ${command}`;
+    let execCommand = `${tuistEnvPath} ${command}`;
     if (args) {
       execCommand = `${execCommand} ${args}`;
     }
