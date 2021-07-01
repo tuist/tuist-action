@@ -2,7 +2,7 @@ const execSync = require("./execSync");
 const tmp = require("tmp");
 const path = require("path");
 const downloadFile = require("./downloadFile");
-const { tuistEnvPath } = require("./tuistEnvPath");
+const { tuistEnvPath } = require("./constants");
 const latestReleaseTuistEnvDownloadURL = require("./latestReleaseTuistEnvDownloadURL");
 
 module.exports = async () => {
