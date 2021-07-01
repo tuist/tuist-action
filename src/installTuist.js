@@ -13,7 +13,7 @@ module.exports = async () => {
   const tuistEnvURL = await latestReleaseTuistEnvDownloadURL();
   console.log("Downloading Tuist...");
   downloadFile(tuistEnvURL, tuistEnvTmpZipPath);
-  execSync(`unzip -o ${tuistEnvTmpZipPath} -d ${tuistEnvUnzippedPath}`);
+  execSync(`unzip -o ${tuistEnvUnzippedPath} -d ${tuistEnvTmpZipPath}`);
   execSync(`cp ${tuistEnvUnzippedPath} ${tuistEnvPath}`);
   execSync(`chmod +x ${tuistEnvPath}`);
   console.log("Tuist has been installed.");
