@@ -3,7 +3,7 @@ const input = require("./input");
 const execSync = require("./execSync");
 const isTuistInstalled = require("./isTuistInstalled");
 const installTuist = require("./installTuist");
-const { tuistEnvPath } = require("./tuistEnvPath");
+const { tuistEnvPath } = require("./constants");
 
 module.exports = () => {
   try {
