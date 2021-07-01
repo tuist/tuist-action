@@ -9,6 +9,7 @@ module.exports = async function () {
       Accept: "application/vnd.github.v3+json",
     },
   });
+  console.log(response);
   return response["assets"].find((asset) => {
     asset["name"] === "tuistenv.zip";
   })["browser_download_url"];
