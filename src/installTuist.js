@@ -11,7 +11,7 @@ module.exports = async () => {
   const tuistEnvTmpZipPath = path.join(tmpobj.name, "tuistenv.zip");
   const tuistEnvUnzippedPath = path.join(tmpobj.name, "tuistenv");
   const tuistEnvURL = await latestReleaseTuistEnvDownloadURL();
-  console.log("Downloading tuistenv...");
+  console.log("Downloading Tuist...");
   downloadFile(tuistEnvURL, tuistEnvTmpZipPath);
   execSync(`unzip -o ${tuistEnvTmpZipPath} -d ${tuistEnvUnzippedPath}`);
   execSync(`cp ${tuistEnvUnzippedPath} ${tuistEnvPath}`);
