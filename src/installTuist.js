@@ -10,11 +10,12 @@ module.exports = async () => {
   const tmpobj = tmp.dirSync();
   const tuistEnvTmpZipPath = path.join(tmpobj.name, "tuistenv.zip");
   const tuistEnvUnzippedPath = path.join(tmpobj.name, "tuistenv");
+  const tuistExecEnvUnzippedPath = path.join(tuistEnvUnzippedPath, "tuistenv");
   const tuistEnvURL = await latestReleaseTuistEnvDownloadURL();
   console.log("Downloading Tuist...");
-  downloadFile(tuistEnvURL, tuistEnvTmpZipPath);
+  await downloadFile(tuistEnvURL, tuistEnvTmpZipPath);
   execSync(`unzip -o ${tuistEnvTmpZipPath} -d ${tuistEnvUnzippedPath}`);
-  execSync(`cp ${tuistEnvUnzippedPath} ${tuistEnvPath}`);
+  execSync(`cp ${tuistExecEnvUnzippedPath} ${tuistEnvPath}`);
   execSync(`chmod +x ${tuistEnvPath}`);
   console.log("Tuist has been installed.");
 };
