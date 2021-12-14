@@ -27,7 +27,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: tuist/tuist-action@0.3.0
+      - uses: tuist/tuist-action@0.4.0
         with:
           command: 'build'
           arguments: ''
