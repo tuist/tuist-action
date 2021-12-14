@@ -1,7 +1,4 @@
 {
-  "files.exclude": {
-    "**/node_modules/**": true
-  },
   "search.exclude": {
     "**/node_modules/**": true
   },
@@ -12,6 +9,9 @@
     "editor.formatOnSave": false
   },
   "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
     "editor.formatOnSave": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
