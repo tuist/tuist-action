@@ -20,8 +20,7 @@ module.exports = async () => {
   }
 
   try {
-    console.log(`Running command: ${execCommand}`);
-    execSync(execCommand);
+    execSync(`${tuistEnvPath} --help`);
   } catch (error) {
     core.setFailed(error.message);
   }
