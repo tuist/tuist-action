@@ -1,22 +1,22 @@
 const isTuistInstalled = require("./isTuistInstalled");
-const execSync = require("./execSync");
+const fs = require("fs");
 
-jest.mock("./execSync");
+jest.mock("fs");
 
 describe("isTuistInstalled", () => {
-  it("returns true when which says Tuist exists", () => {
+  it("returns true when when tuistenv exists in the system", () => {
     // When
     const got = isTuistInstalled();
+    fs.existsSync = jest.fn(() => true);
 
     // Then
     expect(got).toBeTruthy();
-    expect(execSync).toHaveBeenCalledWith("which tuist");
   });
 
-  it("returns true when which errors", () => {
+  it("returns false when tuistenv doesn't exist in the system", () => {
     // Given
-    execSync.mockImplementation(() => {
-      throw new Error("tuist not found");
+    fs.existsSync = jest.fn(() => {
+      throw new Error();
     });
 
     // When
@@ -24,6 +24,5 @@ describe("isTuistInstalled", () => {
 
     // Then
     expect(got).toBeFalsy();
-    expect(execSync).toHaveBeenCalledWith("which tuist");
   });
 });
