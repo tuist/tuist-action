@@ -1,5 +1,7 @@
 const tmp = require('tmp');
 const path = require('path');
+const extract = require('extract-zip');
+
 const execSync = require('./execSync');
 const downloadFile = require('./downloadFile');
 const { tuistEnvPath } = require('./constants');
@@ -17,9 +19,9 @@ module.exports = async () => {
   const tuistEnvURL = await latestReleaseTuistEnvDownloadURL();
   console.log('Downloading Tuist...');
   await downloadFile(tuistEnvURL, tuistEnvTmpZipPath);
-  execSync(
-    `unzip -o ${tuistEnvTmpZipPath} -d ${tuistEnvUnzippedPath}`,
-  );
+  await extract(tuistEnvTmpZipPath, {
+    dir: path.dirname(tuistEnvUnzippedPath),
+  });
   execSync(`cp ${tuistExecEnvUnzippedPath} ${tuistEnvPath}`);
   execSync(`chmod +x ${tuistEnvPath}`);
   console.log(`Tuist has been installed at ${tuistEnvPath}`);
