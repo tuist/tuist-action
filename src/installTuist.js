@@ -1,6 +1,6 @@
-const execSync = require('./execSync');
 const tmp = require('tmp');
 const path = require('path');
+const execSync = require('./execSync');
 const downloadFile = require('./downloadFile');
 const { tuistEnvPath } = require('./constants');
 const latestReleaseTuistEnvDownloadURL = require('./latestReleaseTuistEnvDownloadURL');

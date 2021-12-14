@@ -1,5 +1,5 @@
-const isTuistInstalled = require('./isTuistInstalled');
 const fs = require('fs');
+const isTuistInstalled = require('./isTuistInstalled');
 
 jest.mock('fs');
 

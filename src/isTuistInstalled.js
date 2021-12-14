@@ -1,11 +1,11 @@
-const { tuistEnvPath } = require('./constants');
 const fs = require('fs');
+const { tuistEnvPath } = require('./constants');
 
 module.exports = () => {
   try {
     fs.existsSync(tuistEnvPath);
     return true;
-  } catch {
+  } catch (error) {
     return false;
   }
 };
