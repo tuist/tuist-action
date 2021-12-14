@@ -37,6 +37,7 @@
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
     "axios": "^0.21.1",
+    "nodejs-file-downloader": "^4.8.1",
     "prettier": "^2.5.1",
     "tmp": "^0.2.1"
   },
