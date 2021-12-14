@@ -4,7 +4,7 @@ Please, check out guidelines: https://keepachangelog.com/en/1.0.0/
 
 ## Next
 
-### 0.4.0
+### 0.5.0
 
 #### Fixed
 

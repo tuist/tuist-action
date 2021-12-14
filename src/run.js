@@ -20,7 +20,7 @@ module.exports = async () => {
   }
 
   try {
-    console.log(`Running command: ${command}`);
+    console.log(`Running command: ${execCommand}`);
     execSync(execCommand);
   } catch (error) {
     core.setFailed(error.message);
