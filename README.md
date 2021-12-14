@@ -1,6 +1,9 @@
 # Tuist Action
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Tuist Action](https://github.com/tuist/tuist-action/actions/workflows/tuist-action.yml/badge.svg)](https://github.com/tuist/tuist-action/actions/workflows/tuist-action.yml)
@@ -19,15 +22,15 @@ on:
   pull_request:
 
 jobs:
-  lint:
+  build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
       - uses: tuist/tuist-action@0.1.0
         with:
-          command: "build"
-          arguments: ""
+          command: 'build'
+          arguments: ''
 ```
 
 ## References
@@ -36,6 +39,7 @@ jobs:
 - [vercel/ncc](https://github.com/vercel/ncc)
 - [@actions/github](https://github.com/actions/toolkit/tree/main/packages/github)
 - [@actions/toolkit](https://github.com/actions/toolkit/tree/main/packages/core)
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
