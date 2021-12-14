@@ -1,5 +1,5 @@
-const { tuistEnvPath } = require("./constants");
-const fs = require("fs");
+const { tuistEnvPath } = require('./constants');
+const fs = require('fs');
 
 module.exports = () => {
   try {

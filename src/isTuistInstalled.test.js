@@ -1,10 +1,10 @@
-const isTuistInstalled = require("./isTuistInstalled");
-const fs = require("fs");
+const isTuistInstalled = require('./isTuistInstalled');
+const fs = require('fs');
 
-jest.mock("fs");
+jest.mock('fs');
 
-describe("isTuistInstalled", () => {
-  it("returns true when when tuistenv exists in the system", () => {
+describe('isTuistInstalled', () => {
+  it('returns true when when tuistenv exists in the system', () => {
     // When
     const got = isTuistInstalled();
     fs.existsSync = jest.fn(() => true);

@@ -1,4 +1,4 @@
-const process = require("process");
-const path = require("path");
+const process = require('process');
+const path = require('path');
 
-exports.tuistEnvPath = path.join(process.cwd(), "tuistexec");
+exports.tuistEnvPath = path.join(process.cwd(), 'tuistexec');
