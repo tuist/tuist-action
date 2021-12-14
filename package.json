@@ -1,6 +1,6 @@
 {
   "name": "tuist-action",
-  "version": "0.9.0",
+  "version": "0.11.0",
   "description": "A GitHub action to run Tuist in GitHub workflows",
   "main": "index.js",
   "scripts": {
@@ -38,6 +38,7 @@
     "@actions/github": "^4.0.0",
     "axios": "^0.21.1",
     "nodejs-file-downloader": "^4.8.1",
+    "platform": "^1.3.6",
     "prettier": "^2.5.1",
     "tmp": "^0.2.1"
   },

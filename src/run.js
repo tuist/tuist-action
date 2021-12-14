@@ -4,23 +4,22 @@ const execSync = require('./execSync');
 const isTuistInstalled = require('./isTuistInstalled');
 const installTuist = require('./installTuist');
 const { tuistEnvPath } = require('./constants');
+const ensureDarwin = require('./ensureDarwin');
 
 module.exports = async () => {
-  const command = input.command();
-  const args = input.args();
-
-  // Install Tuist if it doesn't exist in the system
-  // if (!isTuistInstalled()) {
-  // }
-  await installTuist();
-
-  let execCommand = `${tuistEnvPath} ${command}`;
-  if (args) {
-    execCommand = `${execCommand} ${args}`;
-  }
-
   try {
-    execSync(`${tuistEnvPath} --help`);
+    const command = input.command();
+    const args = input.args();
+
+    ensureDarwin();
+    await installTuist();
+
+    let execCommand = `${tuistEnvPath} ${command}`;
+    if (args) {
+      execCommand = `${execCommand} ${args}`;
+    }
+
+    execSync(execCommand);
   } catch (error) {
     core.setFailed(error.message);
   }
