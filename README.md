@@ -10,11 +10,26 @@ This repository contains a [GitHub Action](https://github.com/features/actions) 
 ## Example usage
 
 ```yaml
-uses: tuist/tuist-action@0.1.0
-with:
-  command: "build"
-  arguments: "MyTarget"
+name: My project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  lint:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: tuist/tuist-action@0.1.0
+        with:
+          command: "build"
+          arguments: ""
 ```
+
 ## References
 
 - [Creating a Javascript action](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)
