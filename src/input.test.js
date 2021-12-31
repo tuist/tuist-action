@@ -35,4 +35,20 @@ describe('input', () => {
       });
     });
   });
+
+  describe('environment', () => {
+    it('returns the right value', () => {
+      // Given
+      core.getInput.mockReturnValue('TUIST_IS_CI=true');
+
+      // Then
+      const got = input.environment();
+
+      // Then
+      expect(got).toEqual('TUIST_IS_CI=true');
+      expect(core.getInput).toHaveBeenCalledWith('environment', {
+        required: false,
+      });
+    });
+  });
 });
