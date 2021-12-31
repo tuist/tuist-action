@@ -1,6 +1,9 @@
-name: Tuist
+name: Tuist + Environment variable
 description: "Run Tuist in continuous integration"
 inputs: 
+  environment: 
+    description: "The environment variable to pass to the command as prefix"
+    required: false
   arguments: 
     description: "The arguments to pass to the command"
     required: false
