@@ -39,6 +39,7 @@ describe('run', () => {
 
   it('runs the command', async () => {
     // Given
+    input.environment.mockReturnValue('TUIST_IS_CI=true');
     input.command.mockReturnValue('generate');
     input.args.mockReturnValue('--open');
     isTuistInstalled.mockReturnValue(true);
@@ -48,7 +49,7 @@ describe('run', () => {
 
     // Then
     expect(execSync).toHaveBeenCalledWith(
-      `${tuistEnvPath} generate --open`,
+      `TUIST_IS_CI=true ${tuistEnvPath} generate --open`,
     );
   });
 

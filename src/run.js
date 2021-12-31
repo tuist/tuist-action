@@ -8,6 +8,7 @@ const ensureDarwin = require('./ensureDarwin');
 
 module.exports = async () => {
   try {
+    const environment = input.environment();
     const command = input.command();
     const args = input.args();
 
@@ -15,6 +16,9 @@ module.exports = async () => {
     await installTuist();
 
     let execCommand = `${tuistEnvPath} ${command}`;
+    if (environment) {
+      execCommand = `${environment} ${execCommand}`;
+    }
     if (args) {
       execCommand = `${execCommand} ${args}`;
     }
