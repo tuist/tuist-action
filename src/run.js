@@ -1,7 +1,6 @@
 const core = require('@actions/core');
 const input = require('./input');
 const execSync = require('./execSync');
-const isTuistInstalled = require('./isTuistInstalled');
 const installTuist = require('./installTuist');
 const { tuistEnvPath } = require('./constants');
 const ensureDarwin = require('./ensureDarwin');
