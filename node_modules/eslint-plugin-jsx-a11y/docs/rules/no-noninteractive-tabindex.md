@@ -1,4 +1,8 @@
-# no-noninteractive-tabindex
+# jsx-a11y/no-noninteractive-tabindex
+
+💼 This rule is enabled in the following configs: ☑️ `recommended`, 🔒 `strict`.
+
+<!-- end auto-generated rule header -->
 
 Tab key navigation should be limited to elements on the page that can be interacted with. Thus it is not necessary to add a tabindex to items in an unordered list, for example, to make them navigable through assistive technology. These applications already afford page traversal mechanisms based on the HTML of the page. Generally, we should try to reduce the size of the page's tab ring rather than increasing it.
 
@@ -50,12 +54,12 @@ If you know that a particular element will be scrollable, you might want to add 
 
 ```jsx
 // eslint-disable-next-line no-noninteractive-tabindex
-<pre tabIndex="0"> 
+<pre tabIndex="0">
   <code>{someLongCode}</code>
 </pre>
 ```
 
-## Rule details
+## Rule options
 
 The recommended options for this rule allow `tabIndex` on elements with the noninteractive `tabpanel` role. Adding `tabIndex` to a tabpanel is a recommended practice in some instances.
 
@@ -65,11 +69,21 @@ The recommended options for this rule allow `tabIndex` on elements with the noni
   {
     tags: [],
     roles: ['tabpanel'],
+    allowExpressionValues: true,
   },
 ]
 ```
 
+The `allowExpressionValues` option determines whether the `role` attribute is allowed to be assigned using an expression. For example, the following would pass in recommended mode if `allowExpressionValues` is set to be `true`:
+
+```jsx
+<div role={ROLE_BUTTON} onClick={() => {}} tabIndex="0" />;
+// In case of a conditional expression, there should be literals on both sides of ternary operator
+<div role={isButton ? "button" : "link"} onClick={() => {}} tabIndex="0" />;
+```
+
 ### Succeed
+
 ```jsx
 <div />
 <MyButton tabIndex={0} />
@@ -84,6 +98,7 @@ The recommended options for this rule allow `tabIndex` on elements with the noni
 ```
 
 ### Fail
+
 ```jsx
 <div tabIndex="0" />
 <div role="article" tabIndex="0" />
@@ -92,7 +107,9 @@ The recommended options for this rule allow `tabIndex` on elements with the noni
 ```
 
 ## Accessibility guidelines
+
 - [WCAG 2.1.1](https://www.w3.org/WAI/WCAG21/Understanding/keyboard)
 
 ### Resources
+
 - [Fundamental Keyboard Navigation Conventions](https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_generalnav)
