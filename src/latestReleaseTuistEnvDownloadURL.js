@@ -3,7 +3,7 @@ const process = require('process');
 
 module.exports = async function () {
   const url =
-    'https://api.github.com/repos/tuist/tuist/releases/latest';
+    'https://api.github.com/repos/tuist/tuist/releases/tags/3.39.3'; // latest removed tuistenv
   const response = await axios.get(url, {
     headers: {
       Authorization: `token: ${process.env.GITHUB_TOKEN}`,
