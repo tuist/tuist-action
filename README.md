@@ -1,3 +1,7 @@
+# Archived
+
+This repository is no longer maintained. To use `tuist` on the CI, follow the docs [here](https://docs.tuist.io/documentation/tuist/installation#Continuous-integration)
+
 # Tuist Action
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
