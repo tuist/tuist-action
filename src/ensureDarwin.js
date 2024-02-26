@@ -1,7 +1,5 @@
-const platform = require('platform');
-
 module.exports = () => {
-  if (platform.os.family !== 'Darwin') {
+  if (process.platform !== 'darwin') {
     throw new Error(
       'This action is only supported in macOS environments.',
     );

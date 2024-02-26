@@ -128,7 +128,7 @@ module.exports = {
         type: "suggestion",
 
         docs: {
-            description: "require template literals instead of string concatenation",
+            description: "Require template literals instead of string concatenation",
             recommended: false,
             url: "https://eslint.org/docs/rules/prefer-template"
         },
@@ -188,7 +188,7 @@ module.exports = {
                 return sourceCode.getText(currentNode);
             }
 
-            if (isConcatenation(currentNode) && hasStringLiteral(currentNode) && hasNonStringLiteral(currentNode)) {
+            if (isConcatenation(currentNode) && hasStringLiteral(currentNode)) {
                 const plusSign = sourceCode.getFirstTokenBetween(currentNode.left, currentNode.right, token => token.value === "+");
                 const textBeforePlus = getTextBetween(currentNode.left, plusSign);
                 const textAfterPlus = getTextBetween(plusSign, currentNode.right);
